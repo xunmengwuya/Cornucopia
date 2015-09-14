@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="BottomBarTextStyle">
+        <item name="android:textColor">@color/gray_deep</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
+    </style>
+</resources>
