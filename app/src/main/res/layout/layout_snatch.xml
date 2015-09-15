@@ -2,9 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/operate_control_size"
+        android:background="@drawable/selector_press"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="夺宝" />
+        <LinearLayout
+            android:id="@+id/top_bar_snatch_search"
+            android:layout_width="@dimen/operate_control_size"
+            android:layout_height="@dimen/operate_control_size"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/operate_icon_core_size"
+                android:layout_height="@dimen/operate_icon_core_size"
+                android:scaleType="center"
+                android:src="@mipmap/ic_search" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/top_bar_txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_large" />
+        </LinearLayout>
+
+    </RelativeLayout>
 </LinearLayout>

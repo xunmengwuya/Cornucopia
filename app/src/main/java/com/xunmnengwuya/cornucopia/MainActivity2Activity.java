@@ -72,16 +72,16 @@ public class MainActivity2Activity extends BaseActivity {
             ((RadioButton) rgBottomBar.getChildAt(position)).setChecked(true);
             switch (position) {
                 case 0:
-                    Toast.makeText(MainActivity2Activity.this, "页面" + position, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(MainActivity2Activity.this, "页面" + position, Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
-                    Toast.makeText(MainActivity2Activity.this, "页面" + position, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(MainActivity2Activity.this, "页面" + position, Toast.LENGTH_SHORT).show();
                     break;
                 case 2:
-                    Toast.makeText(MainActivity2Activity.this, "页面" + position, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(MainActivity2Activity.this, "页面" + position, Toast.LENGTH_SHORT).show();
                     break;
                 case 3:
-                    Toast.makeText(MainActivity2Activity.this, "页面" + position, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(MainActivity2Activity.this, "页面" + position, Toast.LENGTH_SHORT).show();
                     break;
             }
         }

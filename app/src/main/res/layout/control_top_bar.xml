@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/page_padding_8">
 
     <LinearLayout
-        android:id="@+id/top_bar_ll_back"
+        android:id="@+id/top_bar_snatch_search"
         android:layout_width="@dimen/operate_icon_size"
         android:layout_height="@dimen/operate_icon_size"
         android:layout_alignParentLeft="true"
