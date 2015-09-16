@@ -9,4 +9,43 @@
         <item name="android:textColor">@color/gray_deep</item>
         <item name="android:textSize">@dimen/font_size_small</item>
     </style>
+
+    <style name="HorizontalThinDividerLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.1dp</item>
+        <item name="android:background">@color/gray_deep_trans</item>
+    </style>
+
+    <style name="HorizontalThickDividerLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:background">@color/gray_ccc</item>
+    </style>
+
+    <style name="HorizontalDividerLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/gray_deep_trans</item>
+    </style>
+
+    <style name="VerticalDividerLineStyle">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/gray_deep</item>
+    </style>
+
+    <style name="CheckTextStyle">
+        <item name="android:textColor">@color/font_check_color</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
+
+    </style>
+
+    <style name="RadioTabStyle" parent="CheckTextStyle">
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

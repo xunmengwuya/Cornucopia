@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/operate_control_size"
@@ -27,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
+
             <TextView
                 android:id="@+id/top_bar_txt_title"
                 android:layout_width="wrap_content"
@@ -38,4 +41,106 @@
         </LinearLayout>
 
     </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1">
+
+                <com.xunmnengwuya.cornucopia.controls.AutoSlidePictureControl
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <View style="@style/HorizontalDividerLineStyle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin_8"
+                android:layout_marginTop="@dimen/activity_vertical_margin_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/str_partition" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/page_padding_8"
+                    android:drawableTop="@mipmap/ic_bask"
+                    android:gravity="center"
+                    android:text="@string/str_bask" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/page_padding_8"
+                    android:drawableTop="@mipmap/ic_common"
+                    android:gravity="center"
+                    android:text="@string/str_com_ques" />
+            </LinearLayout>
+
+            <View style="@style/HorizontalThinDividerLineStyle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"></LinearLayout>
+
+            <View style="@style/HorizontalThickDividerLineStyle" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/page_padding_4"
+                android:paddingTop="@dimen/page_padding_4">
+
+                <RadioButton
+                    style="@style/RadioTabStyle"
+                    android:gravity="center"
+
+                    android:text="人气" />
+
+                <RadioButton
+                    style="@style/RadioTabStyle"
+                    android:text="最新" />
+
+                <RadioButton
+                    style="@style/RadioTabStyle"
+                    android:text="进度" />
+
+                <RadioButton
+                    style="@style/RadioTabStyle"
+                    android:text="总序人数" />
+
+            </RadioGroup>
+
+            <View style="@style/HorizontalThinDividerLineStyle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

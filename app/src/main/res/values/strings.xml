@@ -6,4 +6,7 @@
     <string name="open">打开</string>
     <string name="close">半壁</string>
     <string name="title_activity_main_activity2">MainActivity2Activity</string>
+    <string name="str_partition">10元分区</string>
+    <string name="str_bask">晒单</string>
+    <string name="str_com_ques">常见问题</string>
 </resources>

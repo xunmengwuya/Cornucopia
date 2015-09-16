@@ -1,0 +1,177 @@
+package com.xunmnengwuya.cornucopia.controls;
+
+import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.view.ViewPager;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+
+import com.xunmnengwuya.cornucopia.R;
+import com.xunmnengwuya.cornucopia.adapter.ViewPagerAdapter;
+import com.xunmnengwuya.cornucopia.utils.ConvertUtils;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * Created by Candy on 2015/9/16.
+ */
+public class AutoSlidePictureControl extends LinearLayout {
+
+    private List<Map<String, Object>> mImageUrls;
+    private List<Integer> imageIds;
+    private int currentItem; //当前页面
+    private ScheduledExecutorService scheduledExecutorService;
+    private ViewPager mViewPager;
+    private LinearLayout dotsLayout;
+    private Context mContext;
+
+    private OnSelectedListener mOnSelectedListener;
+
+    public interface OnSelectedListener {
+        void onSelected(int newsId);
+    }
+
+    public AutoSlidePictureControl(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        mContext = context;
+        initControlViews();
+
+        List<Map<String, Object>> list = new ArrayList<>();
+        for (int i = 0; i < 4; i++) {
+            Map<String, Object> item = new HashMap<>();
+            item.put("newsId", 0);
+            item.put("imgId", R.mipmap.desert);
+            list.add(item);
+        }
+
+        setPageData(list);
+    }
+
+
+    private void initControlViews() {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.control_auto_slide_picture, null);
+        mViewPager = (ViewPager) view.findViewById(R.id.auto_slide_picture_view_pager);
+        dotsLayout = (LinearLayout) view.findViewById(R.id.auto_slide_picture_dots);
+        this.addView(view);
+    }
+
+
+    public void setPageData(List<Map<String, Object>> imageUrls) {
+        mImageUrls = imageUrls;
+        ViewPagerAdapter adapter = new ViewPagerAdapter(mContext, createImageView(imageUrls));
+        mViewPager.setAdapter(adapter);
+        mViewPager.setOnPageChangeListener(mViewPagerChangeListener);
+        onStartPlay();
+    }
+
+
+    public void setOnSelectedListener(OnSelectedListener onSelectedListener) {
+        this.mOnSelectedListener = onSelectedListener;
+    }
+
+
+    private List<ImageView> createImageView(List<Map<String, Object>> pictureUrls) {
+        List<ImageView> list = new ArrayList<>();
+        for (int i = 0; i < pictureUrls.size(); i++) {
+            Map<String, Object> item = pictureUrls.get(i);
+            ImageView imgView = new ImageView(mContext);
+            ViewPager.LayoutParams param = new ViewPager.LayoutParams();
+            param.width = ViewPager.LayoutParams.MATCH_PARENT;
+            param.height = ViewPager.LayoutParams.MATCH_PARENT;
+            imgView.setScaleType(ImageView.ScaleType.FIT_XY);
+            imgView.setLayoutParams(param);
+            imgView.setTag(item.get("newsId"));
+            imgView.setImageResource(ConvertUtils.getInteger(item.get("imgId")));
+            imgView.setOnClickListener(imgViewClickListener);
+            list.add(imgView);
+        }
+        return list;
+    }
+
+    private OnClickListener imgViewClickListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            if (null == mOnSelectedListener) {
+                return;
+            }
+            mOnSelectedListener.onSelected(ConvertUtils.getInteger(v.getTag(), 0));
+        }
+    };
+
+    private ViewPager.OnPageChangeListener mViewPagerChangeListener = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            refreshDotsLayout(position);
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    };
+
+    private void onStartPlay() {
+        refreshDotsLayout(0);
+        scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+        //每隔10秒钟切换一张图片
+        scheduledExecutorService.scheduleWithFixedDelay(new ViewPagerTask(), 10, 10, TimeUnit.SECONDS);
+    }
+
+    private class ViewPagerTask implements Runnable {
+
+        @Override
+        public void run() {
+            currentItem = (currentItem + 1) % mImageUrls.size();
+            handler.sendEmptyMessage(0);
+            handler.obtainMessage().sendToTarget();
+        }
+    }
+
+    // * 刷新标签元素布局，每次currentItemIndex值改变的时候都应该进行刷新。
+    private void refreshDotsLayout(int position) {
+        dotsLayout.removeAllViews();
+        for (int i = 0; i < mImageUrls.size(); i++) {
+            LinearLayout.LayoutParams linearParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+            linearParams.weight = 1;
+            linearParams.setMargins(3, 0, 3, 0);
+            RelativeLayout relativeLayout = new RelativeLayout(getContext());
+            ImageView image = new ImageView(getContext());
+            if (i == position) {
+                image.setBackgroundResource(R.mipmap.select);
+            } else {
+                image.setBackgroundResource(R.mipmap.unselect);
+            }
+            RelativeLayout.LayoutParams relativeParams = new RelativeLayout.LayoutParams(15, 15);
+            relativeParams.addRule(RelativeLayout.CENTER_IN_PARENT);
+            relativeLayout.addView(image, relativeParams);
+            dotsLayout.addView(relativeLayout, linearParams);
+        }
+    }
+
+    private Handler handler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            mViewPager.setCurrentItem(currentItem);
+        }
+    };
+}
+
