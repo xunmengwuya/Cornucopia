@@ -66,34 +66,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/activity_vertical_margin_8"
-                android:layout_marginTop="@dimen/activity_vertical_margin_8"
+                android:layout_marginBottom="@dimen/activity_vertical_margin_4"
+                android:layout_marginTop="@dimen/activity_vertical_margin_4"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/str_partition" />
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawablePadding="@dimen/page_padding_8"
-                    android:drawableTop="@mipmap/ic_bask"
-                    android:gravity="center"
+                    android:id="@+id/snatch_txt_bask"
+                    style="@style/MainTextTabStyle"
+                    android:drawableTop="@mipmap/ic_task"
                     android:text="@string/str_bask" />
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawablePadding="@dimen/page_padding_8"
-                    android:drawableTop="@mipmap/ic_common"
-                    android:gravity="center"
-                    android:text="@string/str_com_ques" />
+                    android:id="@+id/snatch_txt_classify"
+                    style="@style/MainTextTabStyle"
+                    android:drawableTop="@mipmap/ic_tips"
+                    android:text="消息" />
+
+                <TextView
+                    android:id="@+id/snatch_txt_comm_ques"
+                    style="@style/MainTextTabStyle"
+                    android:drawableTop="@mipmap/ic_record"
+                    android:text="夺宝记录" />
             </LinearLayout>
 
             <View style="@style/HorizontalThinDividerLineStyle" />
@@ -105,30 +99,31 @@
             <View style="@style/HorizontalThickDividerLineStyle" />
 
             <RadioGroup
+                android:id="@+id/snatch_rg_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="@dimen/page_padding_4"
-                android:paddingTop="@dimen/page_padding_4">
+                android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/snatch_rb_moods"
                     style="@style/RadioTabStyle"
-                    android:gravity="center"
-
-                    android:text="人气" />
+                    android:tag="1"
+                    android:text="@string/str_moods" />
 
                 <RadioButton
+                    android:id="@+id/snatch_rb_newest"
                     style="@style/RadioTabStyle"
-                    android:text="最新" />
+                    android:text="@string/str_newest" />
 
                 <RadioButton
+                    android:id="@+id/snatch_rb_progress"
                     style="@style/RadioTabStyle"
-                    android:text="进度" />
+                    android:text="@string/str_progress" />
 
                 <RadioButton
+                    android:id="@+id/snatch_rb_sum"
                     style="@style/RadioTabStyle"
-                    android:text="总序人数" />
-
+                    android:text="@string/str_sum_persons" />
             </RadioGroup>
 
             <View style="@style/HorizontalThinDividerLineStyle" />
@@ -139,8 +134,12 @@
                 android:layout_weight="4"
                 android:orientation="vertical">
 
+                <GridView
+                    android:id="@+id/snatch_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="2"></GridView>
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

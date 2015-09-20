@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="pink">#DB3652</color>
+    <color name="pink_trans">#88DB3652</color>
     <color name="white">#fff</color>
-    <color name="gray_simple">#F7F7F7</color>
+    <color name="gray_f7">#F7F7F7</color>
     <color name="gray_ccc">#ccc</color>
+    <color name="gray_ccc_trans">#8ccc</color>
     <color name="gray_deep_trans">#8555</color>
     <color name="gray_deep">#555</color>
+    <color name="gray_2f">#2F2F2F</color>
     <color name="blue">#2307FA</color>
+    <color name="yellow">#FAFC3C</color>
 
 </resources>

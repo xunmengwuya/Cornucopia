@@ -1,8 +1,196 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="我的" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/gray_2f"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.xunmnengwuya.cornucopia.controls.CircleImageControl
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/operate_icon_core_size"
+            android:src="@mipmap/desert" />
+
+        <TextView
+            android:id="@+id/my_account_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_8"
+            android:text="你的账户名称"
+            android:textColor="@color/gray_ccc_trans" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin_8"
+                android:text="余额："
+                android:textColor="@color/gray_ccc_trans" />
+
+            <TextView
+                android:id="@+id/my_account_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin_8"
+                android:paddingRight="2dp"
+                android:text="0"
+                android:textColor="@color/yellow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin_8"
+                android:text="元"
+                android:textColor="@color/gray_ccc_trans" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="@dimen/operate_icon_size"
+                android:layout_marginTop="@dimen/activity_vertical_margin_8"
+                android:layout_weight="3"
+                android:background="@drawable/selector_press_pink"
+                android:text="充值"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_middle" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <LinearLayout style="@style/MenuLayoutStyle">
+
+            <TextView
+                style="@style/MenuTextStyle"
+                android:drawableTop="@mipmap/ic_record"
+                android:text="夺宝记录" />
+        </LinearLayout>
+
+        <View style="@style/VerticalThinDividerLineStyle" />
+
+        <LinearLayout style="@style/MenuLayoutStyle">
+
+            <TextView
+                style="@style/MenuTextStyle"
+                android:drawableTop="@mipmap/ic_reward"
+                android:text="中奖记录" />
+        </LinearLayout>
+
+        <View style="@style/VerticalThinDividerLineStyle" />
+
+        <LinearLayout style="@style/MenuLayoutStyle">
+
+            <TextView
+                style="@style/MenuTextStyle"
+                android:drawableTop="@mipmap/ic_task_1"
+                android:text="我的晒单" />
+        </LinearLayout>
+
+        <View style="@style/VerticalThinDividerLineStyle" />
+    </LinearLayout>
+
+    <View style="@style/HorizontalThinDividerLineStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout style="@style/MenuLayoutStyle">
+
+            <TextView
+                style="@style/MenuTextStyle"
+                android:drawableTop="@mipmap/ic_packet"
+                android:text="我的红包" />
+        </LinearLayout>
+
+        <View style="@style/VerticalThinDividerLineStyle" />
+
+        <LinearLayout style="@style/MenuLayoutStyle">
+
+            <TextView
+                style="@style/MenuTextStyle"
+                android:drawableTop="@mipmap/ic_packet"
+                android:text="充值记录" />
+        </LinearLayout>
+
+        <View style="@style/VerticalThinDividerLineStyle" />
+
+        <LinearLayout style="@style/MenuLayoutStyle">
+
+            <TextView
+                style="@style/MenuTextStyle"
+                android:drawableTop="@mipmap/ic_help"
+                android:text="帮帮帮" />
+        </LinearLayout>
+
+        <View style="@style/VerticalThinDividerLineStyle" />
+    </LinearLayout>
+
+    <View style="@style/HorizontalThinDividerLineStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <LinearLayout style="@style/MenuLayoutStyle">
+
+            <TextView
+                style="@style/MenuTextStyle"
+                android:drawableTop="@mipmap/ic_help"
+                android:text="常见问题" />
+        </LinearLayout>
+
+        <View style="@style/VerticalThinDividerLineStyle" />
+
+        <LinearLayout style="@style/MenuLayoutStyle">
+
+            <TextView
+                style="@style/MenuTextStyle"
+                android:drawableTop="@mipmap/ic_seting"
+                android:text="设置" />
+        </LinearLayout>
+
+        <View style="@style/VerticalThinDividerLineStyle" />
+
+        <LinearLayout
+            style="@style/MenuLayoutStyle"
+            android:clickable="false" />
+
+        <View style="@style/VerticalThinDividerLineStyle" />
+    </LinearLayout>
+
 </LinearLayout>

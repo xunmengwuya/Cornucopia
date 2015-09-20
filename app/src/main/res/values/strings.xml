@@ -9,4 +9,13 @@
     <string name="str_partition">10元分区</string>
     <string name="str_bask">晒单</string>
     <string name="str_com_ques">常见问题</string>
+    <string name="str_moods">人气</string>
+    <string name="str_newest">最新</string>
+    <string name="str_progress">进度</string>
+    <string name="str_sum_persons">总需人数</string>
+    <string name="str_list">清单</string>
+    <string name="str_my">我的</string>
+    <string name="str_tobe_open">最新揭晓</string>
+    <string name="str_snatch">夺宝</string>
+    <string name="title_activity_my">MyActivity</string>
 </resources>

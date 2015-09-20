@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
+    xmlns:cornucopia="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.xunmnengwuya.cornucopia.controls.TopBarControl
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="即将揭晓" />
+        cornucopia:topTitle="@string/str_tobe_open" />
 </LinearLayout>

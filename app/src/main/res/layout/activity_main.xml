@@ -25,7 +25,7 @@
             android:id="@+id/left_drawer"
             android:layout_width="240dp"
             android:layout_height="match_parent"
-            android:background="@color/gray_simple"
+            android:background="@color/gray_f7"
             android:layout_gravity="left"
 
             android:choiceMode="singleChoice"

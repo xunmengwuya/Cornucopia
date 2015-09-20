@@ -10,42 +10,76 @@
         <item name="android:textSize">@dimen/font_size_small</item>
     </style>
 
-    <style name="HorizontalThinDividerLineStyle">
+    <style name="MenuLayoutStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/selector_menu_press</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="MenuTextStyle">
+        <item name="android:textColor">@color/gray_deep</item>
+        <item name="android:textSize">@dimen/font_size_middle</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">@dimen/page_padding_8</item>
+    </style>
+
+    <style name="DiverStyle">
+        <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/gray_deep_trans</item>
+    </style>
+
+    <style name="HorizontalThinDividerLineStyle" parent="DiverStyle">
         <item name="android:layout_height">0.1dp</item>
-        <item name="android:background">@color/gray_deep_trans</item>
     </style>
 
-    <style name="HorizontalThickDividerLineStyle">
-        <item name="android:layout_width">match_parent</item>
+    <style name="VerticalThinDividerLineStyle" parent="DiverStyle">
+        <item name="android:layout_width">0.1dp</item>
+    </style>
+
+    <style name="HorizontalThickDividerLineStyle" parent="DiverStyle">
         <item name="android:layout_height">10dp</item>
-        <item name="android:background">@color/gray_ccc</item>
+        <item name="android:background">@color/gray_ccc_trans</item>
     </style>
 
-    <style name="HorizontalDividerLineStyle">
-        <item name="android:layout_width">match_parent</item>
+    <style name="HorizontalDividerLineStyle" parent="DiverStyle">
         <item name="android:layout_height">1dp</item>
-        <item name="android:background">@color/gray_deep_trans</item>
     </style>
 
     <style name="VerticalDividerLineStyle">
         <item name="android:layout_width">1dp</item>
-        <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/gray_deep</item>
     </style>
 
-    <style name="CheckTextStyle">
-        <item name="android:textColor">@color/font_check_color</item>
-        <item name="android:textSize">@dimen/font_size_small</item>
-
-    </style>
-
-    <style name="RadioTabStyle" parent="CheckTextStyle">
-        <item name="android:button">@null</item>
-        <item name="android:textSize">@dimen/font_size_small</item>
+    <style name="TabTextStyle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
+    </style>
+
+    <style name="MainRbTabStyle" parent="TabTextStyle">
+        <item name="android:drawablePadding">@dimen/page_padding_4</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/font_check_color</item>
+    </style>
+
+    <style name="RadioTabStyle" parent="TabTextStyle">
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/font_check_color</item>
+        <item name="android:paddingTop">@dimen/page_padding_8</item>
+        <item name="android:paddingBottom">@dimen/page_padding_8</item>
+    </style>
+
+    <style name="MainTextTabStyle" parent="TabTextStyle">
+        <item name="android:clickable">true</item>
+        <item name="android:drawablePadding">@dimen/page_padding_4</item>
+        <item name="android:textColor">@color/gray_deep</item>
     </style>
 </resources>

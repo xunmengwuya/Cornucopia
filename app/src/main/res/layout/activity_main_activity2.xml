@@ -26,47 +26,31 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawablePadding="@dimen/page_padding_4"
+            style="@style/MainRbTabStyle"
             android:drawableTop="@drawable/selector_tab_snatch"
-            android:gravity="center"
-            android:text="夺宝"
+            android:text="@string/str_snatch"
+            android:tag="0"
             android:textColor="@color/font_check_color" />
 
         <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawablePadding="@dimen/page_padding_4"
+            style="@style/MainRbTabStyle"
             android:drawableTop="@drawable/selector_tab_to_be_open"
-            android:gravity="center"
-            android:text="最新揭晓"
+            android:text="@string/str_tobe_open"
+            android:tag="1"
             android:textColor="@color/font_check_color" />
 
         <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawablePadding="@dimen/page_padding_4"
+            style="@style/MainRbTabStyle"
             android:drawableTop="@drawable/selector_tab_list"
-            android:gravity="center"
-            android:text="清单"
+            android:text="@string/str_list"
+            android:tag="2"
             android:textColor="@color/font_check_color" />
 
         <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawablePadding="@dimen/page_padding_4"
+            style="@style/MainRbTabStyle"
             android:drawableTop="@drawable/selector_tab_my"
-            android:gravity="center"
-            android:text="我的"
+            android:text="@string/str_my"
+            android:tag="3"
             android:textColor="@color/font_check_color" />
     </RadioGroup>
 
