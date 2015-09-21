@@ -91,7 +91,7 @@
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_record"
+                android:drawableTop="@mipmap/ic_snatch"
                 android:text="夺宝记录" />
         </LinearLayout>
 
@@ -111,7 +111,7 @@
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_task_1"
+                android:drawableTop="@mipmap/ic_bask1"
                 android:text="我的晒单" />
         </LinearLayout>
 
@@ -131,7 +131,7 @@
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_packet"
+                android:drawableTop="@mipmap/ic_red_packet"
                 android:text="我的红包" />
         </LinearLayout>
 
@@ -141,7 +141,7 @@
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_packet"
+                android:drawableTop="@mipmap/ic_recharge"
                 android:text="充值记录" />
         </LinearLayout>
 
@@ -170,7 +170,7 @@
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_help"
+                android:drawableTop="@mipmap/ic_comm_ques1"
                 android:text="常见问题" />
         </LinearLayout>
 
@@ -180,7 +180,7 @@
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_seting"
+                android:drawableTop="@mipmap/ic_setting1"
                 android:text="设置" />
         </LinearLayout>
 
