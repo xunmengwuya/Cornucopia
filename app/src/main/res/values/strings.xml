@@ -18,4 +18,5 @@
     <string name="str_tobe_open">最新揭晓</string>
     <string name="str_snatch">夺宝</string>
     <string name="title_activity_my">MyActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
 </resources>

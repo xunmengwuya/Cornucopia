@@ -91,7 +91,7 @@
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_snatch"
+                android:drawableTop="@mipmap/ic_record"
                 android:text="夺宝记录" />
         </LinearLayout>
 
@@ -111,7 +111,7 @@
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_bask1"
+                android:drawableTop="@mipmap/ic_dask"
                 android:text="我的晒单" />
         </LinearLayout>
 
@@ -131,7 +131,7 @@
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_red_packet"
+                android:drawableTop="@mipmap/ic_packet"
                 android:text="我的红包" />
         </LinearLayout>
 
@@ -151,7 +151,7 @@
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_help"
+                android:drawableTop="@mipmap/ic_heart"
                 android:text="帮帮帮" />
         </LinearLayout>
 
@@ -170,17 +170,19 @@
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_comm_ques1"
+                android:drawableTop="@mipmap/ic_comm_qe"
                 android:text="常见问题" />
         </LinearLayout>
 
         <View style="@style/VerticalThinDividerLineStyle" />
 
-        <LinearLayout style="@style/MenuLayoutStyle">
+        <LinearLayout
+            android:id="@+id/my_ll_setting"
+            style="@style/MenuLayoutStyle">
 
             <TextView
                 style="@style/MenuTextStyle"
-                android:drawableTop="@mipmap/ic_setting1"
+                android:drawableTop="@mipmap/ic_setting"
                 android:text="设置" />
         </LinearLayout>
 

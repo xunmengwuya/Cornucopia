@@ -15,13 +15,15 @@
             android:layout_width="@dimen/operate_control_size"
             android:layout_height="@dimen/operate_control_size"
             android:layout_alignParentLeft="true"
+            android:background="@drawable/selector_pink_click"
             android:layout_centerVertical="true"
+            android:clickable="true"
             android:gravity="center">
 
             <ImageView
                 android:layout_width="@dimen/operate_icon_core_size"
                 android:layout_height="@dimen/operate_icon_core_size"
-                android:scaleType="center"
+                android:scaleType="fitXY"
                 android:src="@mipmap/ic_search" />
         </LinearLayout>
 
@@ -39,7 +41,22 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_size_large" />
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/top_bar_snatch_classify"
+            android:layout_width="@dimen/operate_control_size"
+            android:layout_height="@dimen/operate_control_size"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selector_pink_click"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:gravity="center">
 
+            <ImageView
+                android:layout_width="@dimen/operate_icon_core_size"
+                android:layout_height="@dimen/operate_icon_core_size"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_classify" />
+        </LinearLayout>
     </RelativeLayout>
 
     <ScrollView
@@ -74,19 +91,19 @@
                 <TextView
                     android:id="@+id/snatch_txt_bask"
                     style="@style/MainTextTabStyle"
-                    android:drawableTop="@mipmap/ic_task"
+                    android:drawableTop="@mipmap/ic_dask_small"
                     android:text="@string/str_bask" />
 
                 <TextView
                     android:id="@+id/snatch_txt_classify"
                     style="@style/MainTextTabStyle"
-                    android:drawableTop="@mipmap/ic_tips"
+                    android:drawableTop="@mipmap/ic_mess"
                     android:text="消息" />
 
                 <TextView
                     android:id="@+id/snatch_txt_comm_ques"
                     style="@style/MainTextTabStyle"
-                    android:drawableTop="@mipmap/ic_snatch_small"
+                    android:drawableTop="@mipmap/ic_reward_small"
                     android:text="夺宝记录" />
             </LinearLayout>
 

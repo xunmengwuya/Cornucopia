@@ -21,7 +21,7 @@
 
     <style name="MenuTextStyle">
         <item name="android:textColor">@color/gray_deep</item>
-        <item name="android:textSize">@dimen/font_size_middle</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:gravity">center</item>

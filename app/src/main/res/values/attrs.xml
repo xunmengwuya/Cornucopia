@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="TopBarControl">
         <attr name="topTitle" format="string|reference"/>
+        <attr name="isBack" format="boolean"/>
     </declare-styleable>
 
 </resources>

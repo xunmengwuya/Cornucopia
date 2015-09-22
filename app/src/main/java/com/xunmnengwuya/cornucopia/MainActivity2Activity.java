@@ -1,9 +1,11 @@
 package com.xunmnengwuya.cornucopia;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
@@ -31,8 +33,9 @@ public class MainActivity2Activity extends BaseActivity {
     private GridView myGridView;
     private MainViewAdapter mainViewAdapter;
     private GridViewAdapter gridViewAdapter;
-
     private RadioGroup rgBottomBar;
+
+    private LinearLayout llMySetting;
 
 
     @Override
@@ -41,9 +44,8 @@ public class MainActivity2Activity extends BaseActivity {
         ActivityManager.addActivity(this, R.layout.activity_main_activity2);
         findViews();
         initViewPager();
-        findMyViews();
+        findSonPageViews();
         initPageData();
-
         initViewEvent();
     }
 
@@ -52,11 +54,6 @@ public class MainActivity2Activity extends BaseActivity {
         rgBottomBar = (RadioGroup) findViewById(R.id.main_rg_bottom_bar);
     }
 
-
-    private void initViewEvent() {
-        viewPager.setOnPageChangeListener(viewpagerOnPagerChangeListener);
-        rgBottomBar.setOnCheckedChangeListener(rgOnCheckChangedListener);
-    }
 
     private void initViewPager() {
         viewList = new ArrayList<>();
@@ -76,6 +73,19 @@ public class MainActivity2Activity extends BaseActivity {
         ((RadioButton) rgBottomBar.getChildAt(0)).setChecked(true);
         //  bindMyPageData();
 
+    }
+
+
+    private void findSonPageViews() {
+        llMySetting = (LinearLayout) myView.findViewById(R.id.my_ll_setting);
+
+    }
+
+    private void initViewEvent() {
+        viewPager.setOnPageChangeListener(viewpagerOnPagerChangeListener);
+        rgBottomBar.setOnCheckedChangeListener(rgOnCheckChangedListener);
+
+        llMySetting.setOnClickListener(MyMenuOnclickListener);
     }
 
     private ViewPager.OnPageChangeListener viewpagerOnPagerChangeListener = new ViewPager.OnPageChangeListener() {
@@ -123,43 +133,32 @@ public class MainActivity2Activity extends BaseActivity {
         }
     };
 
+
+    private View.OnClickListener MyMenuOnclickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.my_ll_setting:
+                    gotoSonActivity(SettingActivity.class);
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
+
+
+    private void gotoSonActivity(Class gotoClass) {
+        Intent intent = new Intent(MainActivity2Activity.this, gotoClass);
+        startActivity(intent);
+    }
+
+
     // ********处理夺宝页面  begin***********
     //*********处理夺宝页面  begin***********
 
     // ********我的页面  begin***********
 
-    private void bindMyPageData() {
-//        SimpleAdapter simpleAdapter = new SimpleAdapter
-//                (this, getMyPageData(), R.layout.item_grid_my, new String[]{"tabDrawableId", "tabTitle"},
-//                        new int[]{R.id.item_grid_my_img, R.id.item_grid_my_tab}) {
-//        };
-        gridViewAdapter = new GridViewAdapter(MainActivity2Activity.this, getMyPageData());
-        myGridView.setAdapter(gridViewAdapter);
-    }
-
-
-    private List<Map<String, Object>> getMyPageData() {
-        List<Map<String, Object>> list = new ArrayList<>();
-        list.add(getMyPageItem("夺宝记录", R.mipmap.ic_reward, 0));
-        list.add(getMyPageItem("中奖记录", R.mipmap.ic_record, 1));
-        list.add(getMyPageItem("我的晒单", R.mipmap.ic_task_1, 2));
-        list.add(getMyPageItem("我的红包", R.mipmap.ic_packet, 3));
-        list.add(getMyPageItem("充值记录", R.mipmap.ic_packet, 4));
-        list.add(getMyPageItem("帮帮帮", R.mipmap.ic_help, 5));
-        list.add(getMyPageItem("常见问题", R.mipmap.ic_help, 6));
-        list.add(getMyPageItem("设置", R.mipmap.ic_seting, 7));
-        list.add(getMyPageItem("", -1, -1));
-        return list;
-    }
-
-    private Map<String, Object> getMyPageItem(String tabTitle, Integer tabId, int tabTag) {
-        Map<String, Object> tabItem = new HashMap<>();
-        tabItem.put("tabDrawableId", tabId);
-        tabItem.put("tabTitle", tabTitle);
-        tabItem.put("tabTag", tabTag);
-        return tabItem;
-
-    }
 
 
     //*********我的页面  begin***********

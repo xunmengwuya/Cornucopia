@@ -10,19 +10,19 @@
         android:background="@color/gray_f7">
 
         <LinearLayout
-            android:id="@+id/top_bar_snatch_search"
-            android:layout_width="@dimen/operate_icon_size"
-            android:layout_height="@dimen/operate_icon_size"
+            android:id="@+id/top_bar_snatch_back"
+            android:layout_width="@dimen/operate_control_size"
+            android:layout_height="@dimen/operate_control_size"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <ImageView
                 android:layout_width="@dimen/operate_icon_core_size"
                 android:layout_height="@dimen/operate_icon_core_size"
                 android:scaleType="center"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/ic_back" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
